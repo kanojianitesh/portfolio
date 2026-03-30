@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# Nitesh Kanojia — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal academic portfolio for [Nitesh Kanojia](https://kanojianitesh.github.io/portfolio/), PhD Researcher in Electromicrobiology at the University of Queensland – IIT Delhi Research Academy.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript**
+- **Vite** (with SWC)
+- **Tailwind CSS v4**
+- **shadcn/ui** (Radix UI primitives)
+- **React Router v7**
+- Deployed on **GitHub Pages**
 
-## React Compiler
+## Project Structure
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```text
+src/
+├── assets/          # Static assets (images)
+├── components/      # Shared UI components
+│   ├── ui/          # shadcn/ui primitives
+│   └── icons/       # Custom SVG icons
+├── data/            # All site content as TypeScript files
+│   ├── profile.ts
+│   ├── publications.ts
+│   ├── education.ts
+│   ├── awards.ts
+│   ├── conferences.ts
+│   ├── news.ts
+│   ├── teaching.ts
+│   └── skills.ts
+├── hooks/           # Custom React hooks
+├── lib/             # Utilities
+├── pages/           # One folder per route
+│   ├── about/
+│   ├── research/
+│   ├── publications/
+│   ├── teaching/
+│   └── fun/
+├── index.css        # Global styles + theme tokens
+└── theme.css        # Tailwind v4 default theme
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Updating Content
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+All site content lives in `src/data/`. Edit the relevant file to update the corresponding section — no JSX changes needed.
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+| File | Section |
+| --- | --- |
+| `profile.ts` | Name, bio, links |
+| `publications.ts` | Publications list |
+| `education.ts` | Education timeline |
+| `awards.ts` | Honors & awards |
+| `conferences.ts` | Conference presentations |
+| `news.ts` | News / updates |
+| `teaching.ts` | Teaching experience |
+| `skills.ts` | Skills |
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Deployment
+
+Pushes to `main` automatically deploy to GitHub Pages via the workflow in [.github/workflows/deploy.yml](.github/workflows/deploy.yml).
+
+To deploy manually:
+
+```bash
+npm run deploy
 ```
