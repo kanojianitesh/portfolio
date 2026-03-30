@@ -61,8 +61,8 @@
   --secondary-foreground: var(--color-slate-900);
 
   /* Muted */
-  --muted: var(--color-slate-50);
-  --muted-foreground: var(--color-slate-600);
+  --muted: var(--color-slate-100);
+  --muted-foreground: var(--color-slate-700);
 
   /* Accent */
   --accent: var(--color-blue-50);
@@ -73,8 +73,8 @@
   --destructive-foreground: var(--color-white);
 
   /* Structure */
-  --border: var(--color-slate-200);
-  --input: var(--color-slate-200);
+  --border: var(--color-slate-300);
+  --input: var(--color-slate-300);
   --ring: var(--color-blue-600);
 
   /* Charts */

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,7 +10,6 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
-import niteshPhoto from "@/assets/nitesh_photo.jpeg";
 
 // --------------------
 // Navigation Items
@@ -72,12 +70,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
-        {/* Logo / Avatar */}
-        <Link to="/about" className="flex items-center space-x-2">
-          <Avatar className="h-9 w-9 ring-1 ring-border">
-            <AvatarImage src={niteshPhoto} alt="Nitesh Kanojia" />
-            <AvatarFallback>NK</AvatarFallback>
-          </Avatar>
+        {/* Logo / Initials */}
+        <Link to="/about" className="flex items-center">
+          <span className="text-lg font-bold tracking-tight text-foreground hover:text-primary transition-colors">
+            NK
+          </span>
         </Link>
 
         {/* Desktop Nav */}
