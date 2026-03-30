@@ -9,7 +9,7 @@ export function SectionHeading({ children, className }: SectionHeadingProps) {
       className={`text-2xl font-bold tracking-tight ${className ?? ""}`}
     >
       {children}
-      <div className="mt-2 h-0.5 w-12 rounded bg-primary" />
+      <div aria-hidden="true" className="mt-2 h-0.5 w-12 rounded bg-primary" />
     </h2>
   );
 }

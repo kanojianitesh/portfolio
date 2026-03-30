@@ -8,8 +8,10 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { PublicationEntry } from "@/components/PublicationEntry";
 import { publications } from "@/data/publications";
 import { conferences } from "@/data/conferences";
+import { usePageTitle } from "@/hooks/use-page-title";
 
 function Publications() {
+  usePageTitle("Publications");
   const published = publications.filter((p) => p.status === "published");
   const inPrep = publications.filter((p) => p.status === "in-preparation");
 

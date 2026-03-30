@@ -13,9 +13,10 @@ function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
       <Router basename="/portfolio">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="container mx-auto flex-grow px-4 py-8">
+          <main id="main-content" className="container mx-auto flex-grow px-4 py-8">
             <Routes>
               <Route path="/" element={<Navigate to="/about" replace />} />
               <Route path="/about" element={<About />} />

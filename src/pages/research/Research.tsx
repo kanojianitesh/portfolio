@@ -6,8 +6,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { SectionHeading } from "@/components/SectionHeading";
+import { usePageTitle } from "@/hooks/use-page-title";
 
 function Research() {
+  usePageTitle("Research");
+
   return (
     <section className="mx-auto max-w-4xl space-y-10">
       <SectionHeading>Research</SectionHeading>

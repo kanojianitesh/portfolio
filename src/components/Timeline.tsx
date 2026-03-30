@@ -10,7 +10,7 @@ export function Timeline({ items }: TimelineProps) {
       {items.map((item) => (
         <div key={item.id} className="relative">
           {/* Dot */}
-          <div className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-primary bg-background" />
+          <div aria-hidden="true" className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-primary bg-background" />
 
           <div className="space-y-1">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
