@@ -1,8 +1,17 @@
+import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import niteshPhoto from "@/assets/nitesh_photo.jpeg";
 
 // --------------------
 // Navigation Items
@@ -58,13 +67,15 @@ function NavLinks({ onNavigate, orientation = "horizontal" }: NavLinksProps) {
 // Header Component
 // --------------------
 export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
         {/* Logo / Avatar */}
         <Link to="/about" className="flex items-center space-x-2">
           <Avatar className="h-9 w-9 ring-1 ring-border">
-            <AvatarImage alt="Profile" />
+            <AvatarImage src={niteshPhoto} alt="Nitesh Kanojia" />
             <AvatarFallback>NK</AvatarFallback>
           </Avatar>
         </Link>
@@ -80,14 +91,53 @@ export default function Header() {
             size="sm"
             className="hidden md:flex"
           >
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">
+            <a
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              target="_blank"
+              rel="noreferrer"
+            >
               Resume
             </a>
           </Button>
 
           <ModeToggle />
+
+          {/* Mobile Hamburger */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="h-5 w-5" />
+          </Button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+        <SheetContent side="right">
+          <SheetHeader>
+            <SheetTitle>Menu</SheetTitle>
+          </SheetHeader>
+          <div className="px-4 py-2 space-y-6">
+            <NavLinks
+              orientation="vertical"
+              onNavigate={() => setMobileOpen(false)}
+            />
+            <Button asChild variant="outline" size="sm" className="w-full">
+              <a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Resume
+              </a>
+            </Button>
+          </div>
+        </SheetContent>
+      </Sheet>
     </header>
   );
 }

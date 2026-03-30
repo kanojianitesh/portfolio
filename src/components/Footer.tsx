@@ -1,39 +1,53 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
+import { ScholarIcon } from "@/components/icons/ScholarIcon";
+import { OrcidIcon } from "@/components/icons/OrcidIcon";
 
 function Footer() {
   return (
     <footer className="mt-10 w-full border-t border-border bg-background/60 py-6 backdrop-blur">
       <div className="container mx-auto flex flex-col items-center justify-center space-y-3 text-center">
-        <div className="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-2">
-          <Button asChild variant="ghost">
+        <div className="flex justify-center space-x-1">
+          <Button asChild variant="ghost" size="icon">
             <a
-              href="http://www.linkedin.com/in/nitesh-kanojia-1510"
+              href="https://www.linkedin.com/in/nitesh-kanojia-1510"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
-              {/* <span>LinkedIn</span> */}
             </a>
           </Button>
-          <Button asChild variant="ghost">
+          <Button asChild variant="ghost" size="icon">
+            <a
+              href="https://scholar.google.com/citations?user=zetUw0UAAAAJ&hl=en"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Google Scholar"
+            >
+              <ScholarIcon className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button asChild variant="ghost" size="icon">
+            <a
+              href="https://orcid.org/0000-0002-9860-3533"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="ORCID"
+            >
+              <OrcidIcon className="h-5 w-5" />
+            </a>
+          </Button>
+          <Button asChild variant="ghost" size="icon">
             <a href="mailto:Kanojianitesh01@gmail.com" aria-label="Email">
               <Mail className="h-5 w-5" />
-              <span>Kanojianitesh01@gmail.com</span>
-            </a>
-          </Button>
-          <Button asChild variant="ghost">
-            <a href="tel:+919665957179" aria-label="Phone">
-              <Phone className="h-5 w-5" />
-              <span>+91 966-595-7179</span>
             </a>
           </Button>
         </div>
 
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} by{" "}
-          <span className="font-medium text-primary">Nitesh</span>
+          &copy; {new Date().getFullYear()} by{" "}
+          <span className="font-medium text-primary">Nitesh Kanojia</span>
         </p>
       </div>
     </footer>

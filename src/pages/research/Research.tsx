@@ -1,34 +1,107 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { SectionHeading } from "@/components/SectionHeading";
+
 function Research() {
   return (
-    <section className="space-y-6">
-      <h2 className="text-2xl font-semibold mb-4">Research Experience</h2>
-      <p className="leading-relaxed">
-        I am pursuing a Ph.D. in Electromicrobiology at the University of
-        Queensland – IIT Delhi Research Academy. My work examines Shewanella
-        oneidensis nanowire formation during extracellular electron transfer and
-        the effects of heavy metals in electrochemical environments. This
-        research integrates microbiology and electrochemistry to advance
-        bioelectrochemical systems for sustainable energy and metal recovery.
-      </p>
+    <section className="mx-auto max-w-4xl space-y-10">
+      <SectionHeading>Research</SectionHeading>
 
-      <ul className="list-disc list-inside space-y-1">
-        <li>
-          Research focuses on microbial nanowires, electron transfer, and
-          biofilm conductivity.
-        </li>
-        <li>
-          Experience with interdisciplinary electrochemical and microbiological
-          experiments.
-        </li>
-        <li>
-          Collaborations with Dr. Lucinda Doyle, Dr. Gordon Southam, and Dr.
-          Bernardino Virdis.
-        </li>
-        <li>
-          Proficient with advanced instrumentation including Octet, Vi-cell,
-          Clonepix, and Cedex bioanalyser.
-        </li>
-      </ul>
+      {/* Current Research */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Current Research</CardTitle>
+          <CardDescription>
+            Ph.D. in Electromicrobiology &middot; University of Queensland – IIT
+            Delhi Research Academy &middot; 2020 – Present
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm leading-relaxed">
+          <p>
+            My work examines <em>Shewanella oneidensis</em> nanowire formation
+            during extracellular electron transfer and the effects of heavy
+            metals in electrochemical environments. This research integrates
+            microbiology and electrochemistry to advance bioelectrochemical
+            systems for sustainable energy and metal recovery.
+          </p>
+
+          <div>
+            <h4 className="mb-2 font-semibold">Key Focus Areas</h4>
+            <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+              <li>
+                Microbial nanowires, electron transfer, and biofilm conductivity
+              </li>
+              <li>
+                Interdisciplinary electrochemical and microbiological experiments
+              </li>
+              <li>
+                Advanced instrumentation including Octet, Vi-cell, Clonepix, and
+                Cedex bioanalyser
+              </li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Collaborators */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Collaborators</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <span className="font-medium">Dr. Lucinda Doyle</span>
+              <span className="text-muted-foreground">
+                {" "}
+                — Primary Supervisor
+              </span>
+            </li>
+            <li>
+              <span className="font-medium">Dr. Gordon Southam</span>
+              <span className="text-muted-foreground"> — Co-Supervisor</span>
+            </li>
+            <li>
+              <span className="font-medium">Dr. Bernardino Virdis</span>
+              <span className="text-muted-foreground"> — Co-Supervisor</span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Funding */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Research Funding</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <span className="font-medium">
+                ANSTO Beamtime Grant (AUD 98,352 each, twice)
+              </span>
+              <span className="text-muted-foreground">
+                {" "}
+                — Australian Synchrotron XFM Beamline
+              </span>
+            </li>
+            <li>
+              <span className="font-medium">
+                UQ Research Training Tuition Fee & Stipend Scholarship
+              </span>
+              <span className="text-muted-foreground">
+                {" "}
+                — University of Queensland
+              </span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
     </section>
   );
 }

@@ -36,74 +36,56 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 /* Light theme - Professional Academic Design */
 :root {
   --radius: 0.5rem;
 
-  /* Base layers - Clean, crisp background */
+  /* Base layers */
   --background: var(--color-white);
   --foreground: var(--color-slate-900);
 
-  /* Surface layers - Subtle elevation */
+  /* Surface layers */
   --card: var(--color-slate-100);
   --card-foreground: var(--color-slate-900);
   --popover: var(--color-slate-100);
   --popover-foreground: var(--color-slate-900);
 
-  /* Brand color - Professional blue for academic context */
+  /* Brand color - Professional blue */
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-white);
 
-  /* Secondary - Subtle, sophisticated */
+  /* Secondary */
   --secondary: var(--color-slate-100);
   --secondary-foreground: var(--color-slate-900);
 
-  /* Muted - For supporting text and backgrounds */
+  /* Muted */
   --muted: var(--color-slate-50);
   --muted-foreground: var(--color-slate-600);
 
-  /* Accent - Complementary highlight color */
+  /* Accent */
   --accent: var(--color-blue-50);
   --accent-foreground: var(--color-blue-900);
 
-  /* Error / destructive */
+  /* Destructive */
   --destructive: var(--color-red-600);
   --destructive-foreground: var(--color-white);
 
-  /* Structure - Clear but not harsh */
+  /* Structure */
   --border: var(--color-slate-200);
   --input: var(--color-slate-200);
   --ring: var(--color-blue-600);
 
-  /* Charts / data visuals - Professional palette */
+  /* Charts */
   --chart-1: var(--color-blue-600);
   --chart-2: var(--color-indigo-500);
   --chart-3: var(--color-sky-500);
   --chart-4: var(--color-blue-700);
   --chart-5: var(--color-cyan-600);
-
-  /* Sidebar */
-  --sidebar: var(--color-white);
-  --sidebar-foreground: var(--color-slate-900);
-  --sidebar-primary: var(--color-blue-700);
-  --sidebar-primary-foreground: var(--color-white);
-  --sidebar-accent: var(--color-slate-100);
-  --sidebar-accent-foreground: var(--color-slate-900);
-  --sidebar-border: var(--color-slate-200);
-  --sidebar-ring: var(--color-blue-600);
 }
 
-/* Dark theme - Refined for readability */
+/* Dark theme */
 .dark {
   --background: var(--color-slate-950);
   --foreground: var(--color-slate-50);
@@ -137,15 +119,6 @@
   --chart-3: var(--color-sky-400);
   --chart-4: var(--color-blue-600);
   --chart-5: var(--color-cyan-500);
-
-  --sidebar: var(--color-slate-950);
-  --sidebar-foreground: var(--color-slate-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-white);
-  --sidebar-accent: var(--color-slate-800);
-  --sidebar-accent-foreground: var(--color-slate-100);
-  --sidebar-border: var(--color-slate-800);
-  --sidebar-ring: var(--color-blue-500);
 }
 
 @layer base {
@@ -154,14 +127,5 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

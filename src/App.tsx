@@ -12,13 +12,12 @@ import { ThemeProvider } from "./components/theme-provider";
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <Router>
+      <Router basename="/portfolio">
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="container mx-auto flex-grow px-4 py-8">
             <Routes>
-              <Route path="/" element={<Navigate to="/portfolio" replace />} />
-              <Route path="/portfolio" element={<Navigate to="/about" replace />} />
+              <Route path="/" element={<Navigate to="/about" replace />} />
               <Route path="/about" element={<About />} />
               <Route path="/research" element={<Research />} />
               <Route path="/publications" element={<Publications />} />
